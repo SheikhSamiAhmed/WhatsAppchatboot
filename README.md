@@ -4,7 +4,9 @@ whatsapp chatbot using python django and flask
  Install necessary modules
  =========================
  pip install twilio --user
+ 
  pip install flask --user
+ 
  pip install django --user
  
 -> Set up a Django project and run  database migratopm by running: 
