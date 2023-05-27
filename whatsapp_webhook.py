@@ -19,8 +19,6 @@ def send_whatsapp_message(to, body):
 
     return message.sid
 
-
-
 def handle_incoming_message(request):
     msg_body = request.values.get('Body', None)
     sender_number = request.values.get('From', None)
@@ -52,9 +50,16 @@ def handle_incoming_message(request):
     return HttpResponse(str(response))
 
 if __name__ == '__main__':
-    from django.core.wsgi import get_wsgi_application
-    from django.conf import settings
-    import os
-
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'chatbot_project.settings')
-    application = get_wsgi_application()
+    from flask import Flask, request
+    app = Flask(__name__)
+    
+    @app.route('/webhook', methods=['POST'])
+    def webhook():
+        return handle_incoming_message(request)
+    
+    if settings.DEBUG:
+        app.run(port=5000)
+    else:
+        from gevent.pywsgi import WSGIServer
+        http_server = WSGIServer(('0.0.0.0', 5000), app)
+        http_server.serve_forever()
