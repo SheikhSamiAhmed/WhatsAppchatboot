@@ -9,6 +9,9 @@ Install necessary modules
  
  pip install django --user
  
+ pip install pyngrok --user
+ 
+ 
 STEPS:-
 =======
 
