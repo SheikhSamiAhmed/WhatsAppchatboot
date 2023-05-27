@@ -37,6 +37,8 @@ Set up a new WhatsApp Sandbox in your Twilio account and note the assigned sandb
 
 ->  set up ngrox to create a secure tunnel to your localhost
 
+ngrok http 5000
+
 Start the development server
 ============================
 python manage.py runserver
