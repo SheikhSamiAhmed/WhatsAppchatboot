@@ -1,14 +1,17 @@
-# WhatsAppchatboot
+
 whatsapp chatbot using python django and flask
 ==================================================
- Install necessary modules
- =========================
+Install necessary modules
+==========================
  pip install twilio --user
  
  pip install flask --user
  
  pip install django --user
  
+STEPS:-
+=======
+
 -> Set up a Django project and run  database migratopm by running: 
     python manage.py migrate
     
@@ -17,6 +20,7 @@ whatsapp chatbot using python django and flask
 -> Set up the Django views
 
 -> Configure the URL routing
+
 
 -> Configure Twilio for WhatsApp integration 
 ============================================
